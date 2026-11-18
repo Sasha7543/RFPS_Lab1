@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Форма зворотного зв'язку стартапу SynapseTech AI">
+  <title>Зворотній зв’язок — SynapseTech AI</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ХЕДЕР З НАЗВОЮ ТА ЛОГОТИПОМ -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo-link">
+        <img src="img/logo.svg" alt="SynapseTech AI Логотип" class="logo-img">
+      </a>
+      <nav>
+        <a href="index.html" class="btn btn-outline">На Головну</a>
+        <a href="projects.html" class="btn btn-outline">Проєкти</a>
+        <a href="reviews.html" class="btn btn-outline">Відгуки про нас</a>
+        <a href="feedback.html" class="btn btn-outline active">Зворотній зв’язок</a>
+      </nav>
+      <div class="header-auth-buttons">
+        <a href="index.html#cabinet-modal" class="btn btn-secondary">Власний кабінет</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container form-container">
+    <main>
+      <section>
+        <h1>Форма зворотного зв’язку</h1>
+        <p>
+          Маєте ідею для спільних R&amp;D досліджень, бажаєте інвестувати у стартап або повідомити про помилку? 
+          Будь ласка, заповніть форму нижче, і наша команда зв'яжеться з вами найближчим часом.
+        </p>
+
+        <!-- ФОРМА ЗВОРОТНОГО ЗВ'ЯЗКУ ЗГІДНО ВСІХ ВИМОГ ВАРІАНТУ 2 -->
+        <form action="#" method="post" autocomplete="on">
+
+          <!-- ВИМОГА 10: Поля 1, 2, 3, 4 та 5 згруповані, обведені рамкою з легендою «Персональна інформація» -->
+          <fieldset>
+            <legend>Персональна інформація</legend>
+
+            <!-- 1. Прізвище та ім'я -->
+            <div class="form-group">
+              <label for="fullname">1. Прізвище та ім’я *</label>
+              <input type="text" id="fullname" name="fullname" required placeholder="Наприклад: Коваленко Олександр" autocomplete="name">
+            </div>
+
+            <!-- 2. E-mail -->
+            <div class="form-group">
+              <label for="user-email">2. E-mail адреса *</label>
+              <input type="email" id="user-email" name="user_email" required placeholder="alex@example.com" autocomplete="email">
+            </div>
+
+            <!-- 3. Вік -->
+            <div class="form-group">
+              <label for="user-age">3. Вік (років) *</label>
+              <input type="number" id="user-age" name="user_age" min="16" max="110" placeholder="Вкажіть ваш вік (наприклад, 21)" required>
+            </div>
+
+            <!-- 4. Освіта (вибрати одну з переліку: повна, неповна, вища, професійна) -->
+            <div class="form-group">
+              <label>4. Рівень освіти (оберіть один варіант) *</label>
+              <div class="radio-group">
+                <label class="radio-item">
+                  <input type="radio" name="education" value="повна" required> Повна
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="education" value="неповна"> Неповна
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="education" value="вища"> Вища
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="education" value="професійна"> Професійна
+                </label>
+              </div>
+            </div>
+
+            <!-- 5. Інтереси (вибрати декілька з переліку: науковець, інвестор, промоутер, держслужбовець) -->
+            <div class="form-group">
+              <label>5. Ваші інтереси / сфера діяльності (оберіть декілька):</label>
+              <div class="checkbox-group">
+                <label class="checkbox-item">
+                  <input type="checkbox" name="interests[]" value="науковець"> Науковець
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="interests[]" value="інвестор"> Інвестор
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="interests[]" value="промоутер"> Промоутер
+                </label>
+                <label class="checkbox-item">
+                  <input type="checkbox" name="interests[]" value="держслужбовець"> Держслужбовець
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+
+          <!-- 6. Випадаючий список «Мета зворотнього зв’язку» -->
+          <div class="form-group">
+            <label for="feedback-purpose">6. Мета зворотнього зв’язку *</label>
+            <select id="feedback-purpose" name="feedback_purpose" required>
+              <option value="" disabled selected>-- Оберіть мету вашого звернення --</option>
+              <option value="співпраця">Співпраця</option>
+              <option value="скарга на порушення права власності">Скарга на порушення права власності</option>
+              <option value="пропозиція">Пропозиція</option>
+              <option value="наявність помилки">Наявність помилки</option>
+            </select>
+          </div>
+
+          <!-- 7. Текст у поле «Детально» з обмеженням на висоту, ширину і кількість символів -->
+          <div class="form-group">
+            <label for="feedback-details">7. Детально (опис звернення) *</label>
+            <textarea 
+              id="feedback-details" 
+              name="feedback_details" 
+              rows="6" 
+              cols="50" 
+              maxlength="500" 
+              required 
+              placeholder="Введіть опис вашого звернення (максимум 500 символів)..."
+            ></textarea>
+            <small style="color:#64748b; display:block; margin-top:0.25rem;">
+              Обмеження поля: висота (6 рядків), ширина (50 колонок), ліміт довжини — до 500 символів.
+            </small>
+          </div>
+
+          <!-- 9. Поле зі згодою на обробку інформації -->
+          <div class="form-group" style="margin-top:1.5rem;">
+            <label class="checkbox-item">
+              <input type="checkbox" id="user-consent" name="user_consent" required>
+              <strong>9. Я надаю добровільну згоду на обробку моїх персональних даних відповідно до політики конфіденційності стартапу *</strong>
+            </label>
+          </div>
+
+          <!-- 8. Кнопки з відправленням користувачем наданої у п.1-7 інформації -->
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" style="padding: 0.75rem 2rem;">Надіслати звернення</button>
+            <button type="reset" class="btn btn-secondary">Очистити форму</button>
+            <a href="index.html" class="btn btn-outline">Скасувати та повернутися</a>
+          </div>
+
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <!-- ФУТЕР З АДРЕСОЮ ТА КОНТАКТАМИ -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h4>Центр зв’язку з громадськістю</h4>
+        <p>SynapseTech AI відкритий до співпраці з університетами, інвестиційними фондами та інженерами.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Гаряча лінія</h4>
+        <address>
+          вул. академіка Глушкова, 42, м. Київ<br>
+          Тел: <a href="tel:+380442393222">+38 (044) 239-32-22</a><br>
+          Підтримка: <a href="mailto:support@synapsetech.ua">support@synapsetech.ua</a>
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Швидка навігація</h4>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="projects.html">Проєкти</a></li>
+          <li><a href="reviews.html">Відгуки</a></li>
+          <li><a href="feedback.html">Зворотній зв’язок</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 SynapseTech AI. Лабораторна робота №1. Сторінка «Зворотній зв’язок».</p>
+    </div>
+  </footer>
+
+</body>
+</html>
